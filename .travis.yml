@@ -1,5 +1,3 @@
-language: cpp
-compiler:
-  - gcc
+language: golang
 script:
   - ./travis.sh
