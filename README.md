@@ -5,21 +5,14 @@ Prove that insertions into arrays are faster than insertions into linked-lists.
 
 Prerequisites
 -------------
-* Ruby
-* Bundler gem
-* make
-* A C++ compiler
-* Boost test library
-
-You can boost test library on Ubuntu using ```sudo apt-get install libboost-test-dev```
-
+* Golang
 
 How to run the benchmarks
 -------------------------
 
 * Clone the repository
 ```
-git clone https://github.com/chiku/linkedlists-vs-arrays.git
+git clone https://github.com/chiku/linkedlists-vs-arrays.git -b golang
 ```
 * Nagivate to the source code
 ```
@@ -36,8 +29,6 @@ bundle
 
 Result
 ------
-
-You can view the results by opening *public/index.html* in a web-browser. You can also open *result.xlsx* in a [spreadsheet application](https://www.libreoffice.org/download/).
 
 Precomputed results are available at http://chiku.github.io/linkedlists-vs-arrays/
 

@@ -1,10 +1,7 @@
-language: cpp
-compiler:
-  - gcc
+language: golang
 script:
   - sudo apt-get update
-  - sudo apt-get install libboost-test-dev lcov
-  - cd linkedlist
-  - make clean coverage
-  - cd ../arraylist
-  - make clean coverage
+  - cd arraylist && go test -coverprofile=coverage.out && go tool cover -html=coverage.out -o coverage.html && cd ..
+  - cd linkedlist && go test -coverprofile=coverage.out && go tool cover -html=coverage.out -o coverage.html && cd ..
+  - go install github.com/chiku/linkedlists-vs-arrays/compare
+  - go install github.com/chiku/linkedlists-vs-arrays/create_report

@@ -1,16 +1,19 @@
 #!/bin/sh
 
-mkdir -p output
-
 cd arraylist
-make clean compile test
-./bin/arraylist | tee ../output/arraylist.csv
+go test -coverprofile=coverage.out
+go tool cover -html=coverage.out -o coverage.html
+
 cd ..
 
 cd linkedlist
-make clean compile test
-./bin/linkedlist | tee ../output/linkedlist.csv
+go test -coverprofile=coverage.out
+go tool cover -html=coverage.out -o coverage.html
+
 cd ..
 
-ruby generate_chart_report.rb
-ruby generate_spreadsheet_report.rb
+go install github.com/chiku/linkedlists-vs-arrays/compare
+go install github.com/chiku/linkedlists-vs-arrays/create_report
+
+compare | tee output/result.csv
+create_report
