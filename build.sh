@@ -3,20 +3,11 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-golang_prereqs() {
-  go get github.com/mattn/gom
-}
-
-golang_build() {
+main() {
   cd arraylist && gom test -coverprofile=coverage.out && gom tool cover -html=coverage.out -o coverage.html && cd ..
   cd linkedlist && gom test -coverprofile=coverage.out && gom tool cover -html=coverage.out -o coverage.html && cd ..
-  gom install github.com/chiku/linkedlists-vs-arrays/compare
-  gom install github.com/chiku/linkedlists-vs-arrays/create_report
-}
-
-main() {
-  golang_prereqs
-  golang_build
+  gom build -o output/compare github.com/chiku/linkedlists-vs-arrays/compare
+  gom build -o output/create_report github.com/chiku/linkedlists-vs-arrays/create_report
 }
 
 main
