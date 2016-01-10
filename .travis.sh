@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 golang_prereqs() {
   sudo apt-get update
-  sudo apt-get install golang
+  sudo apt-get --yes --force-yes install golang
   go get github.com/mattn/gom
 }
 
