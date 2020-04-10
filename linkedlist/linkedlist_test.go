@@ -2,76 +2,100 @@ package linkedlist
 
 import (
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 
-func Test_linked_list_is_empty_on_creation(t *testing.T) {
-	assert.True(t, NewLinkedlist().IsEmpty(), "New list must be empty")
+func TestLinkedListEmptyOnCreation(t *testing.T) {
+	if !NewLinkedlist().IsEmpty() {
+		t.Errorf("New list must be empty")
+	}
 }
 
-func Test_linked_list_has_reports_items_as_zero_before_insertion(t *testing.T) {
+func TestLinkedListHasReportsItemsAsZeroBeforeInsertion(t *testing.T) {
 	list := NewLinkedlist()
 
-	assert.Equal(t, 0, list.Get(0))
-	assert.Equal(t, 0, list.Get(1))
+	assertEqualInt(t, list.Get(0), 0)
+	assertEqualInt(t, list.Get(1), 0)
 }
 
-func Test_linked_list_has_items_when_first_item_is_inserted(t *testing.T) {
+func TestLinkedListHasItemsWhenFirstItemIsInserted(t *testing.T) {
 	list := NewLinkedlist()
 	list.Insert(10, 0)
 
-	assert.False(t, list.IsEmpty(), "List with items must not be empty")
-	assert.Equal(t, 10, list.Get(0))
+	if list.IsEmpty() {
+		t.Errorf("List with items must not be empty")
+	}
+	assertEqualInt(t, list.Get(0), 10)
 }
 
-func Test_linked_list_has_items_when_second_item_is_inserted_at_end(t *testing.T) {
+func TestLinkedListHasItemsWhenSecondItemIsInsertedAtEnd(t *testing.T) {
 	list := NewLinkedlist()
 	list.Insert(10, 0)
 	list.Insert(20, 1)
 
-	assert.False(t, list.IsEmpty(), "List with items must not be empty")
-	assert.Equal(t, 10, list.Get(0))
-	assert.Equal(t, 20, list.Get(1))
+	if list.IsEmpty() {
+		t.Errorf("List with items must not be empty")
+	}
+	assertEqualInt(t, list.Get(0), 10)
+	assertEqualInt(t, list.Get(1), 20)
 }
 
-func Test_linked_list_has_items_when_item_is_inserted_beyond_end(t *testing.T) {
+func TestLinkedListHasItemsWhenItemIsInsertedBeyondEnd(t *testing.T) {
 	list := NewLinkedlist()
 	list.Insert(10, 0)
 	list.Insert(20, 2)
 
-	assert.False(t, list.IsEmpty(), "List with items must not be empty")
-	assert.Equal(t, 10, list.Get(0))
-	assert.Equal(t, 20, list.Get(1))
+	if list.IsEmpty() {
+		t.Errorf("List with items must not be empty")
+	}
+	assertEqualInt(t, list.Get(0), 10)
+	assertEqualInt(t, list.Get(1), 20)
 }
 
-func Test_linked_list_has_items_when_second_item_is_inserted_at_start(t *testing.T) {
+func TestLinkedListHasItemsWhenSecondItemIsInsertedAtStart(t *testing.T) {
 	list := NewLinkedlist()
 	list.Insert(10, 0)
 	list.Insert(20, 0)
 
-	assert.False(t, list.IsEmpty(), "List with items must not be empty")
-	assert.Equal(t, 20, list.Get(0))
-	assert.Equal(t, 10, list.Get(1))
+	if list.IsEmpty() {
+		t.Errorf("List with items must not be empty")
+	}
+	assertEqualInt(t, list.Get(0), 20)
+	assertEqualInt(t, list.Get(1), 10)
 }
 
-func Test_linked_list_has_items_when_third_item_is_inserted_in_middle(t *testing.T) {
+func TestLinkedListHasItemsWhenThirdItemIsInsertedInMiddle(t *testing.T) {
 	list := NewLinkedlist()
 	list.Insert(10, 0)
 	list.Insert(20, 1)
 	list.Insert(30, 1)
 
-	assert.False(t, list.IsEmpty(), "List with items must not be empty")
-	assert.Equal(t, 10, list.Get(0))
-	assert.Equal(t, 30, list.Get(1))
-	assert.Equal(t, 20, list.Get(2))
+	if list.IsEmpty() {
+		t.Errorf("List with items must not be empty")
+	}
+	assertEqualInt(t, list.Get(0), 10)
+	assertEqualInt(t, list.Get(1), 30)
+	assertEqualInt(t, list.Get(2), 20)
 }
 
-func Test_linked_list_has_a_string_representation(t *testing.T) {
+func TestLinkedListHasAStringRepresentation(t *testing.T) {
 	list := NewLinkedlist()
 	list.Insert(10, 0)
 	list.Insert(20, 1)
 	list.Insert(30, 1)
 
-	assert.Equal(t, "[ <10> -> <30> -> <20> -> NULL ]", list.String())
+	assertEqualString(t, list.String(), "[ <10> -> <30> -> <20> -> NULL ]")
+}
+
+func assertEqualInt(t *testing.T, actual, expected int) {
+	t.Helper()
+	if expected != actual {
+		t.Errorf("%d != %d", actual, expected)
+	}
+}
+
+func assertEqualString(t *testing.T, actual, expected string) {
+	t.Helper()
+	if expected != actual {
+		t.Errorf("%s != %s", actual, expected)
+	}
 }

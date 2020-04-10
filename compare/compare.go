@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
-)
 
-import (
 	"github.com/chiku/linkedlists-vs-arrays/arraylist"
 	"github.com/chiku/linkedlists-vs-arrays/linkedlist"
 )

@@ -1,6 +1,0 @@
-#gom 'github.com/chiku/linkedlist-vs-arrays/create_report', :branch => 'golang'
-#gom 'github.com/chiku/linkedlist-vs-arrays/compare', :branch => 'golang'
-
-group :test do
-    gom 'github.com/stretchr/testify/assert'
-end

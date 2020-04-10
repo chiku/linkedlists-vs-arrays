@@ -4,9 +4,8 @@ set -euo pipefail
 IFS=$'\n\t'
 
 main() {
-  export PATH=$GOROOT/bin:$PATH
-  ./output/compare | tee output/result.csv
-  ./output/create_report
+  ./arraylist/bin/compare-go | tee ./output/result.csv
+  ./arraylist/bin/create_report-go
 }
 
 main
