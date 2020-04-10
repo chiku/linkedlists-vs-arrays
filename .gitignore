@@ -1,16 +1,6 @@
 # Project specific
-coverage.html
-coverage.out
-arraylist/bin/
-arraylist/coverage.filtered.info
-arraylist/coverage.info
-arraylist/coverage/
-arraylist/obj/
-linkedlist/bin/
-linkedlist/coverage.filtered.info
-linkedlist/coverage.info
-linkedlist/coverage/
-linkedlist/obj/
+obj/
+bin/
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o

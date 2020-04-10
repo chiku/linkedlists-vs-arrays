@@ -5,8 +5,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/chiku/linkedlists-vs-arrays/arraylist"
-	"github.com/chiku/linkedlists-vs-arrays/linkedlist"
+	"github.com/chiku/linkedlists-vs-arrays/pkg/arraylist"
+	"github.com/chiku/linkedlists-vs-arrays/pkg/linkedlist"
 )
 
 const (

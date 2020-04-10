@@ -5,8 +5,8 @@ IFS=$'\n\t'
 
 main() {
   go test -cover ./...
-  go build -o ./arraylist/bin/compare-go ./compare
-  go build -o ./arraylist/bin/create_report-go ./create_report
+  go build -o ./bin/compare ./cmd/compare
+  go build -o ./bin/create-report ./cmd/createreport
 }
 
 main
