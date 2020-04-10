@@ -26,9 +26,3 @@ _testmain.go
 *.exe
 *.test
 *.prof
-
-# Gom
-_vendor/
-
-# Node
-node_modules/
