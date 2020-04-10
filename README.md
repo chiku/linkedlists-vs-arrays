@@ -27,10 +27,6 @@ git clone https://github.com/chiku/linkedlists-vs-arrays.git -b golang
 ```
 cd linkedlists-vs-arrays
 ```
-* Fetch the prerequisites
-```
-./prereqs.sh
-```
 * Build the app
 ```
 ./build.sh
