@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/chiku/linkedlists-vs-arrays.svg?branch=cpp)](https://travis-ci.org/chiku/linkedlists-vs-arrays)
-[![Build Status](https://travis-ci.org/chiku/linkedlists-vs-arrays.svg?branch=golang)](https://travis-ci.org/chiku/linkedlists-vs-arrays)
+[![Build Status C++](https://travis-ci.org/chiku/linkedlists-vs-arrays.svg?branch=cpp)](https://travis-ci.org/chiku/linkedlists-vs-arrays)
+[![Build Status Go](https://travis-ci.org/chiku/linkedlists-vs-arrays.svg?branch=golang)](https://travis-ci.org/chiku/linkedlists-vs-arrays)
 
 Purpose
 =======
@@ -31,7 +31,7 @@ cd linkedlists-vs-arrays
 * Fetch the prerequisites
 ```
 ./prereqs.sh # Ubuntu or Debian are supported
-# Please adjust this script if you are using another operating-system
+# Please adjust this script if you are using another operating system
 ```
 * Build the app
 ```
@@ -42,22 +42,15 @@ cd linkedlists-vs-arrays
 ./run.sh
 ```
 
-### golang
+### Go
 
 * Clone the repository
 ```
-cd $GOROOT
-mkdir -p gitbub.com/chiku
-cd gitbub.com/chiku
 git clone https://github.com/chiku/linkedlists-vs-arrays.git -b golang
 ```
 * Nagivate to the source code
 ```
 cd linkedlists-vs-arrays
-```
-* Fetch the prerequisites
-```
-./prereqs.sh
 ```
 * Build the app
 ```
@@ -73,7 +66,6 @@ Result
 
 Precomputed results are available at http://htmlpreview.github.io/?https://github.com/chiku/linkedlists-vs-arrays/blob/cpp/public/index.html
 and at http://htmlpreview.github.io/?https://github.com/chiku/linkedlists-vs-arrays/blob/golang/public/index.html
-
 
 License
 -------
