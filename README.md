@@ -8,11 +8,6 @@ Prove that insertions into arrays are faster than insertions into linked-lists.
 Prerequisites
 -------------
 * Golang
-* Ruby
-* Bundler gem
-* make
-* A C++ compiler
-* Boost test library
 
 How to run the benchmarks
 -------------------------
