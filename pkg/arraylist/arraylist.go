@@ -31,10 +31,8 @@ func (list *Arraylist) Insert(value int, position int) {
 		position = list.tail
 	}
 
-	for i := list.capacity - 2; i > position-1; i-- {
-		list.values[i+1] = list.values[i]
-	}
-
+	list.values = append(list.values, 0)
+	copy(list.values[position+1:], list.values[position:])
 	list.values[position] = value
 }
 

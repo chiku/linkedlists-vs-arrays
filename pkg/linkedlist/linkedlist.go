@@ -15,8 +15,8 @@ type Linkedlist struct {
 	head *node
 }
 
-func NewLinkedlist() Linkedlist {
-	return Linkedlist{head: nil}
+func NewLinkedlist() *Linkedlist {
+	return &Linkedlist{head: nil}
 }
 
 func (list Linkedlist) IsEmpty() bool {
@@ -30,21 +30,21 @@ func (list Linkedlist) Get(position int) int {
 	for i, p = 0, list.head; i < position && p != nil; i, p = i+1, p.next {
 	}
 
-	if p != nil {
-		return p.value
+	if p == nil {
+		return 0
 	}
 
-	return 0
+	return p.value
 }
 
 func (list *Linkedlist) Insert(value int, position int) {
-	var i int
-	var p *node
-
 	if list.IsEmpty() || position == 0 {
 		list.head = newNode(value, list.head)
 		return
 	}
+
+	var i int
+	var p *node
 
 	for i, p = 0, list.head; i < position-1 && p.next != nil; i, p = i+1, p.next {
 	}
